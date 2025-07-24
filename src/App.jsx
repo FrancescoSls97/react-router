@@ -1,3 +1,4 @@
+import HomePage from './pages/HomePage'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 
@@ -10,6 +11,7 @@ function App() {
        <Routes>
         {/* definizione delle singole rotte */}
         {/* la prima route sarà sempre l'index dell'app*/}
+        <Route path="/" Component={HomePage}></Route>
        </Routes>
       </BrowserRouter>
     </>
