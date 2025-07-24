@@ -1,4 +1,4 @@
-export default function HomePage() {
+export default function ProductsPage() {
 
     return(
         <>
@@ -24,12 +24,12 @@ export default function HomePage() {
       <section id="jumbo">
         <div className="p-5 mb-4 bg-warning rounded-3">
           <div className="container-fluid py-5 ">
-            <h1 className="display-5 fw-bold">GIALLO</h1>
+            <h1 className="display-5 fw-bold">I NOSTRI PRODOTTI RUBATI</h1>
             <p className="col-md-8 fs-4">
-              Questo è un jumbotron d'esempio, stiamo ancora costruendo la pagina, quindi per ora non ci abbiamo ancora messo nulla, però è giallo, che bello il giallo, qui sotto ci sarà un bottone, non serve a nulla, per ora, ma comunque cè
+              Abbiamo solo il meglio, si, quello degli altri però, non è niente di nostro, è tutto rubato per potervi offrire prezzi più bassi della concorrenza, saranno anche onesti, ma da loro paghi di più
             </p>
             <button className="btn btn-danger btn-lg" type="button">
-              BOTTONE INUTILE
+              NO, NON SERVO ANCORA A NIENTE
             </button>
           </div>
         </div> 
