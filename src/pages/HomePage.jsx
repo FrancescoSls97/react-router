@@ -108,16 +108,13 @@ export default function HomePage() {
             <h3>Link utili</h3>
             <ul className="list-unstyled">
               <li>
-                <a href="#">Home</a>
+                <a href="/">Home</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="/products">Prodotti</a>
               </li>
               <li>
-                <a href="#">Services</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
+                <a href="/contacts">Contact</a>
               </li>
             </ul>
           </div>

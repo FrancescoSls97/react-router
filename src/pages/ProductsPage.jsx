@@ -2,7 +2,7 @@ export default function ProductsPage() {
 
     return(
         <>
-              <header>
+      <header>
       <nav className="navbar navbar-expand-sm navbar-light bg-light ">
         <div className="container p-2">
           <a className="navbar-brand" href="/">Ladro Shop</a>
