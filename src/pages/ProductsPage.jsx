@@ -1,4 +1,20 @@
+import { useEffect, useState } from "react"
+
 export default function ProductsPage() {
+
+  const [products, setProducts] = useState([])
+
+  //fetch dati prodotti dall' API
+  function fetchProducts() {
+    fetch("https://fakestoreapi.com/products")
+    .then((res)=>res.json())
+    .then(data => {
+      console.log(data);
+      setProducts(data)  
+    });
+  }
+
+  useEffect(fetchProducts, [])
 
     return(
         <>
@@ -37,49 +53,21 @@ export default function ProductsPage() {
       <section id="products">
         <div className="container">
           <h2>ROBEH</h2>
-            <p>Ecco una selezione dei nostri miglior prodotti rubati</p>
-            <div className="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3">
-              <div className="col">
-                <div className="card">
-                  <img className='card-img-top' src="https://media.tenor.com/em-V0uVJQ6cAAAAe/yotobi-robe.png" alt="robe" />
-                  <div className="cardbody">
-                    ROBEH 999.999$
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card">
-                  <img className='card-img-top' src="https://media.tenor.com/em-V0uVJQ6cAAAAe/yotobi-robe.png" alt="robe" />
-                  <div className="cardbody">
-                    ROBEH 999.999$
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card">
-                  <img className='card-img-top' src="https://media.tenor.com/em-V0uVJQ6cAAAAe/yotobi-robe.png" alt="robe" />
-                  <div className="cardbody">
-                    ROBEH 999.999$
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card">
-                  <img className='card-img-top' src="https://media.tenor.com/em-V0uVJQ6cAAAAe/yotobi-robe.png" alt="robe" />
-                  <div className="cardbody">
-                    ROBEH 999.999$
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card">
-                  <img className='card-img-top' src="https://media.tenor.com/em-V0uVJQ6cAAAAe/yotobi-robe.png" alt="robe" />
-                  <div className="cardbody">
-                    ROBEH 999.999$
-                  </div>
+        <p>Ecco una selezione dei nostri miglior prodotti rubati</p>
+        <div className="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3">
+          {products.map((product) =>(
+            <div className="col">
+              <div key={product.id} className="card h-100">
+                <img className="img-card h-50"src={product.image} alt={product.title} />
+                <div className="card-body">
+                  <h5>{product.title}</h5>
+                  <h4>{product.price}</h4>
+                  <p>{product.category}</p>
                 </div>
               </div>
             </div>
+          ))};
+        </div>
         </div>
       </section>
      </main>
