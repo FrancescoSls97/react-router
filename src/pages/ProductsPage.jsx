@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 export default function ProductsPage() {
 
@@ -46,6 +47,9 @@ export default function ProductsPage() {
                   <h5>{product.title}</h5>
                   <h4>{product.price}</h4>
                   <p>{product.category}</p>
+                  <Link to="/products/:id" className="btn btn-primary">
+                        Aggiungi al carrello
+                      </Link>
                 </div>
               </div>
             </div>
