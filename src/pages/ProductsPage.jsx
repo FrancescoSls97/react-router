@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 
 export default function ProductsPage() {
 
+  const api_url = `https://fakestoreapi.com/products`
   const [products, setProducts] = useState([])
+  
 
   //fetch dati prodotti dall' API
   function fetchProducts() {
-    fetch("https://fakestoreapi.com/products")
+    fetch(api_url)
     .then((res)=>res.json())
     .then(data => {
       console.log(data);
@@ -47,9 +49,8 @@ export default function ProductsPage() {
                   <h5>{product.title}</h5>
                   <h4>{product.price}</h4>
                   <p>{product.category}</p>
-                  <Link to="/products/:id" className="btn btn-primary">
-                        Aggiungi al carrello
-                      </Link>
+                  <Link to={`/products/${product.id}`} className="btn btn-primary m-2"> Dettagli del prodotto </Link>
+                  <button type="button" className="btn btn-primary"> Aggiungi al carrello <i class="fa-solid fa-cart-shopping"></i></button>
                 </div>
               </div>
             </div>
